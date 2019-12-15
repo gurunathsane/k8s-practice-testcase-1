@@ -1,0 +1,4 @@
+creds
+terraform_scrips/.terraform
+*.tfstate
+*.tfstate.backup

@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: production-ingress
+  namespace: production
+spec:
+  rules:
+  - host: guestbook.proengg.io
+    http:
+      paths:
+      - backend:
+          serviceName: frontend
+          servicePort: 80
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: staging-ingress
+  namespace: staging
+spec:
+  rules:
+  - host: staging-guestbook.proengg.io
+    http:
+      paths:
+      - backend:
+          serviceName: frontend
+          servicePort: 80
